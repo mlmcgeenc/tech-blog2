@@ -43,5 +43,5 @@ app.use(routes);
 // force: true resyncs the connections and tables recreated
 // this includes DROPPING any data or records stored on the server
 sequelize.sync({ force: false }).then(() => {
-	app.listen(PORT, () => console.log('>> NOW LISTENING'));
+  app.listen(process.env.PORT || 3001, () => console.log('>> NOW LISTENING'));
 });
